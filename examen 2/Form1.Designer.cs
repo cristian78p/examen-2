@@ -156,6 +156,7 @@
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.Size = new System.Drawing.Size(315, 452);
             this.dgvClientes.TabIndex = 13;
+            this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
             // 
             // label7
             // 
@@ -175,7 +176,7 @@
             this.bttnEditar.TabIndex = 15;
             this.bttnEditar.Text = "Editar";
             this.bttnEditar.UseVisualStyleBackColor = true;
-            this.bttnEditar.Click += new System.EventHandler(this.button1_Click);
+            this.bttnEditar.Click += new System.EventHandler(this.bttnEditar_Click);
             // 
             // bttnEliminar
             // 
@@ -185,6 +186,7 @@
             this.bttnEliminar.TabIndex = 16;
             this.bttnEliminar.Text = "Eliminar";
             this.bttnEliminar.UseVisualStyleBackColor = true;
+            this.bttnEliminar.Click += new System.EventHandler(this.bttnEliminar_Click);
             // 
             // Form1
             // 
