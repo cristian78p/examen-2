@@ -39,9 +39,11 @@
             this.labelCuentas = new System.Windows.Forms.Label();
             this.txtCuentas = new System.Windows.Forms.TextBox();
             this.bttnAgregar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.bttnEditar = new System.Windows.Forms.Button();
+            this.bttnEliminar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBoxTipo
@@ -51,7 +53,7 @@
             this.comboBoxTipo.Items.AddRange(new object[] {
             "Corporativo",
             "Individual"});
-            this.comboBoxTipo.Location = new System.Drawing.Point(33, 94);
+            this.comboBoxTipo.Location = new System.Drawing.Point(34, 130);
             this.comboBoxTipo.Name = "comboBoxTipo";
             this.comboBoxTipo.Size = new System.Drawing.Size(217, 21);
             this.comboBoxTipo.TabIndex = 0;
@@ -59,21 +61,21 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(33, 147);
+            this.txtNombre.Location = new System.Drawing.Point(34, 183);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(217, 20);
             this.txtNombre.TabIndex = 1;
             // 
             // txtIdentificacion
             // 
-            this.txtIdentificacion.Location = new System.Drawing.Point(33, 201);
+            this.txtIdentificacion.Location = new System.Drawing.Point(34, 237);
             this.txtIdentificacion.Name = "txtIdentificacion";
             this.txtIdentificacion.Size = new System.Drawing.Size(217, 20);
             this.txtIdentificacion.TabIndex = 2;
             // 
             // txtSaldo
             // 
-            this.txtSaldo.Location = new System.Drawing.Point(33, 256);
+            this.txtSaldo.Location = new System.Drawing.Point(34, 292);
             this.txtSaldo.Name = "txtSaldo";
             this.txtSaldo.Size = new System.Drawing.Size(217, 20);
             this.txtSaldo.TabIndex = 4;
@@ -82,7 +84,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(30, 78);
+            this.label2.Location = new System.Drawing.Point(31, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 13);
             this.label2.TabIndex = 6;
@@ -92,7 +94,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(30, 131);
+            this.label3.Location = new System.Drawing.Point(31, 167);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 7;
@@ -102,7 +104,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(30, 185);
+            this.label4.Location = new System.Drawing.Point(31, 221);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 13);
             this.label4.TabIndex = 8;
@@ -112,7 +114,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(30, 240);
+            this.label5.Location = new System.Drawing.Point(31, 276);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 13);
             this.label5.TabIndex = 9;
@@ -122,7 +124,7 @@
             // 
             this.labelCuentas.AutoSize = true;
             this.labelCuentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCuentas.Location = new System.Drawing.Point(30, 295);
+            this.labelCuentas.Location = new System.Drawing.Point(31, 331);
             this.labelCuentas.Name = "labelCuentas";
             this.labelCuentas.Size = new System.Drawing.Size(99, 13);
             this.labelCuentas.TabIndex = 11;
@@ -131,7 +133,7 @@
             // 
             // txtCuentas
             // 
-            this.txtCuentas.Location = new System.Drawing.Point(33, 311);
+            this.txtCuentas.Location = new System.Drawing.Point(34, 347);
             this.txtCuentas.Name = "txtCuentas";
             this.txtCuentas.Size = new System.Drawing.Size(217, 20);
             this.txtCuentas.TabIndex = 10;
@@ -139,38 +141,60 @@
             // 
             // bttnAgregar
             // 
-            this.bttnAgregar.Location = new System.Drawing.Point(33, 357);
+            this.bttnAgregar.Location = new System.Drawing.Point(34, 393);
             this.bttnAgregar.Name = "bttnAgregar";
             this.bttnAgregar.Size = new System.Drawing.Size(126, 28);
             this.bttnAgregar.TabIndex = 12;
             this.bttnAgregar.Text = "Agregar";
             this.bttnAgregar.UseVisualStyleBackColor = true;
+            this.bttnAgregar.Click += new System.EventHandler(this.bttnAgregar_Click);
             // 
-            // dataGridView1
+            // dgvClientes
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(365, 78);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(474, 452);
-            this.dataGridView1.TabIndex = 13;
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Location = new System.Drawing.Point(300, 44);
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.Size = new System.Drawing.Size(315, 452);
+            this.dgvClientes.TabIndex = 13;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(529, 51);
+            this.label7.Location = new System.Drawing.Point(369, 17);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(160, 24);
             this.label7.TabIndex = 14;
             this.label7.Text = "Lista de clientes";
             // 
+            // bttnEditar
+            // 
+            this.bttnEditar.Location = new System.Drawing.Point(300, 519);
+            this.bttnEditar.Name = "bttnEditar";
+            this.bttnEditar.Size = new System.Drawing.Size(126, 28);
+            this.bttnEditar.TabIndex = 15;
+            this.bttnEditar.Text = "Editar";
+            this.bttnEditar.UseVisualStyleBackColor = true;
+            this.bttnEditar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // bttnEliminar
+            // 
+            this.bttnEliminar.Location = new System.Drawing.Point(489, 519);
+            this.bttnEliminar.Name = "bttnEliminar";
+            this.bttnEliminar.Size = new System.Drawing.Size(126, 28);
+            this.bttnEliminar.TabIndex = 16;
+            this.bttnEliminar.Text = "Eliminar";
+            this.bttnEliminar.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(879, 558);
+            this.ClientSize = new System.Drawing.Size(673, 572);
+            this.Controls.Add(this.bttnEliminar);
+            this.Controls.Add(this.bttnEditar);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.bttnAgregar);
             this.Controls.Add(this.labelCuentas);
             this.Controls.Add(this.txtCuentas);
@@ -184,7 +208,7 @@
             this.Controls.Add(this.comboBoxTipo);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,8 +227,10 @@
         private System.Windows.Forms.Label labelCuentas;
         private System.Windows.Forms.TextBox txtCuentas;
         private System.Windows.Forms.Button bttnAgregar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button bttnEditar;
+        private System.Windows.Forms.Button bttnEliminar;
     }
 }
 

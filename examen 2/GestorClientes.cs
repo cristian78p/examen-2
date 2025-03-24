@@ -35,6 +35,10 @@ namespace examen_2
                 }
                 clientes.Add(cliente);
             }
+            catch (ArgumentException ex)
+            {
+                throw; 
+            }
             catch (Exception ex)
             {
                 throw new Exception("Error al agregar el cliente.", ex);
