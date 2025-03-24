@@ -16,5 +16,19 @@ namespace examen_2
         {
             InitializeComponent();
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxTipo.SelectedIndex == 1)
+            {
+                txtCuentas.Visible = true;
+                labelCuentas.Visible = true;
+            }
+            else
+            {
+                txtCuentas.Visible = false;
+                labelCuentas.Visible = false;
+            }
+        }
     }
 }
