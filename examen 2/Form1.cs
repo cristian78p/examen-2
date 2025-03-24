@@ -205,7 +205,6 @@ namespace examen_2
                 }
 
                 Cliente clienteModificado = ClienteFactory.CrearCliente(tipo, nombre, identificacion, saldo, cuentasActivas);
-                clienteModificado.Saldo += clienteModificado.CalcularBeneficio();
 
                 GestorClientes.Ins.EditarCliente(identificacion, clienteModificado);
 
