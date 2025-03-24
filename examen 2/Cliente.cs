@@ -10,9 +10,9 @@ namespace examen_2
     {
         public string Nombre { get; set; }
         public int Identificacion { get; set; }
-        public double SaldoInicial { get; set; }
+        public double Saldo { get; set; }
 
-        public Cliente(string nombre, int identificacion, double saldoInicial) 
+        public Cliente(string nombre, int identificacion, double saldo) 
         {
             if (string.IsNullOrWhiteSpace(nombre))
             {
@@ -23,14 +23,14 @@ namespace examen_2
                 throw new ArgumentException("El numero de identificacion debe ser mayor a cero");
             }
 
-            if (saldoInicial <= 0)
+            if (saldo <= 0)
             {
                 throw new ArgumentException("El salario base debe ser mayor a cero");
             }
 
             Nombre = nombre;
             Identificacion = identificacion;
-            SaldoInicial = saldoInicial;
+            Saldo = saldo;
         }
         public abstract double CalcularBeneficio();
     }

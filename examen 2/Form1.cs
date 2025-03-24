@@ -83,7 +83,21 @@ namespace examen_2
                
 
                 Cliente nuevoCliente = ClienteFactory.CrearCliente(tipo, nombre, identificacion, saldo, cuentasActivas);
+                nuevoCliente.Saldo += nuevoCliente.CalcularBeneficio();
                 GestorClientes.Ins.AgregarCliente(nuevoCliente);
+
+                if (nuevoCliente is ClienteCorporativo clienteCorp)
+                {
+                    if (clienteCorp.AccesoLineaCredito)
+                    {
+                        MessageBox.Show("Este cliente corporativo aplica para una línea de crédito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Este cliente corporativo no aplica para una línea de crédito (saldo menor a $50,000,000).", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+
                 LimpiarCampos();
                 CargarDGV();
                 MessageBox.Show("Cliente agregado exitosamente.");
@@ -126,7 +140,7 @@ namespace examen_2
 
                 txtNombre.Text = clienteSeleccionado.Nombre;
                 txtIdentificacion.Text = clienteSeleccionado.Identificacion.ToString();
-                txtSaldo.Text = clienteSeleccionado.SaldoInicial.ToString();
+                txtSaldo.Text = clienteSeleccionado.Saldo.ToString();
 
                 // Determinar el tipo de cliente y ajustar el formulario
                 if (clienteSeleccionado is ClienteCorporativo)
@@ -191,8 +205,21 @@ namespace examen_2
                 }
 
                 Cliente clienteModificado = ClienteFactory.CrearCliente(tipo, nombre, identificacion, saldo, cuentasActivas);
+                clienteModificado.Saldo += clienteModificado.CalcularBeneficio();
 
                 GestorClientes.Ins.EditarCliente(identificacion, clienteModificado);
+
+                if (clienteModificado is ClienteCorporativo clienteCorp)
+                {
+                    if (clienteCorp.AccesoLineaCredito)
+                    {
+                        MessageBox.Show("Este cliente corporativo aplica para una línea de crédito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Este cliente corporativo no aplica para una línea de crédito (saldo menor a $50,000,000).", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
 
                 LimpiarCampos();
                 CargarDGV();

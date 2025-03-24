@@ -9,7 +9,7 @@ namespace examen_2
     public class ClienteIndividual : Cliente
     {
         public int CantidadCuentasActivas { get; set; }
-        public ClienteIndividual(string nombre, int identificacion, double saldoInicial, int cantidadCuentasActivas) : base(nombre, identificacion, saldoInicial)
+        public ClienteIndividual(string nombre, int identificacion, double saldo, int cantidadCuentasActivas) : base(nombre, identificacion, saldo)
         {
             if (cantidadCuentasActivas < 0 || cantidadCuentasActivas > 3)
             {

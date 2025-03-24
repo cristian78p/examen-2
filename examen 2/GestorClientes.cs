@@ -56,7 +56,7 @@ namespace examen_2
                 if (clienteExistente != null)
                 {
                     clienteExistente.Nombre = nuevosDatos.Nombre;
-                    clienteExistente.SaldoInicial = nuevosDatos.SaldoInicial;
+                    clienteExistente.Saldo = nuevosDatos.Saldo;
                 }
                 else
                 {

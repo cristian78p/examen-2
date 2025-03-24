@@ -9,9 +9,9 @@ namespace examen_2
     public class ClienteCorporativo : Cliente
     {
         public bool AccesoLineaCredito { get; set; }
-        public ClienteCorporativo(string nombre, int identificacion, double saldoInicial) : base(nombre, identificacion, saldoInicial)
+        public ClienteCorporativo(string nombre, int identificacion, double saldo) : base(nombre, identificacion, saldo)
         {
-            if (saldoInicial >= 50000000)
+            if (saldo >= 50000000)
             {
                 AccesoLineaCredito = true;
             }
@@ -22,7 +22,7 @@ namespace examen_2
         }
         public override double CalcularBeneficio()
         {
-            return AccesoLineaCredito ? SaldoInicial * 0.10 : 0;
+            return AccesoLineaCredito ? Saldo * 0.10 : 0;
         }
     }
 }
